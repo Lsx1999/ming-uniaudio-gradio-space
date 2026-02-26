@@ -75,15 +75,12 @@ DROPDOWN_CHOICES = {
 }
 
 IP_DICT = {
-    "曹操": "三国演义_曹操",
-    "郭德纲": "郭德纲_郭德纲",
     "康熙": "康熙王朝_康熙",
     "潘金莲": "水浒传_潘金莲",
     "佩奇": "小猪佩奇_佩奇",
     "四郎": "甄嬛传_四郎",
     "唐僧": "西游记_唐僧",
     "武松": "水浒传_武松",
-    "于谦": "于谦_于谦",
     "雍正": "雍正王朝_雍正",
     "余则成": "潜伏_余则成",
     "野原美伢 (美伢)": "蜡笔小新_野原美伢 (美伢)",
@@ -123,14 +120,12 @@ def load_and_merge_ips(original_dict: dict, filepath: str) -> dict:
                     key = value = line
                     new_ips[key] = value
 
-    # 仅对从文件读取的新IP按拼音进行排序
     sorted_new_ips = dict(
         sorted(new_ips.items(), key=lambda item: pinyin(item[0], style=Style.NORMAL))
     )
 
-    # 合并字典：将排序后的新IP追加到原始字典后面
-    merged_dict = original_dict.copy()
-    merged_dict.update(sorted_new_ips)
+    merged_dict = sorted_new_ips.copy()
+    merged_dict.update(original_dict)
 
     return merged_dict
 
@@ -348,11 +343,11 @@ EXAMPLES_DATA = {
     # 零样本TTS: [目标文本, 参考音频]
     "zero_shot_tts": [
         [
-            "Ming-omni-tts 是一款高性能的统一音频生成模型，可以实现对语音属性的精确控制，并能在单一通道中合成语音、环境音和音乐",
+            "只有当科技为本地社群创造价值的时候，才真正有意义。",
             f"{EXAMPLES_DIR}/basic-pitch.wav",
         ],
         [
-            "Ming-omni-tts is a high-performance unified audio generation model that achieves precise control over speech attributes and enables single-channel synthesis of speech, environmental sounds, and music.",
+            "They're trying to get people with vague ideas for projects to come together.",
             f"{EXAMPLES_DIR}/basic-volume.wav",
         ],
     ],
