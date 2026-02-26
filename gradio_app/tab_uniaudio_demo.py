@@ -314,7 +314,6 @@ EXAMPLES_DATA = {
             None,
         ],
         # === 精品音色（无参考音频 → None；IP名在 idx5） ===
-        # === 精品音色（无参考音频 → None；IP名在 idx5） ===
         [
             "精品音色",
             "总裁问，刚才皮皮鲁唱的歌是谁的词谁的曲，大手笔呀。",
@@ -461,8 +460,7 @@ class MingOmniTTSDemoTab:
 
                             i_tts_btn = gr.Button("生成指令语音", variant="primary")
 
-                            # 指令TTS示例 - 暂时禁用（待音频文件准备完成后启用）
-                            gr.Examples(
+                            i_tts_examples = gr.Examples(
                                 examples=EXAMPLES_DATA["instruct_tts"],
                                 inputs=[
                                     i_tts_type,
@@ -503,6 +501,20 @@ class MingOmniTTSDemoTab:
                         fn=update_details_visibility,
                         inputs=i_tts_type,
                         outputs=[
+                            i_tts_prompt,
+                            i_tts_emotion,
+                            i_tts_dialect,
+                            i_tts_ip,
+                            i_tts_style,
+                            i_tts_speed,
+                            i_tts_pitch,
+                            i_tts_volume,
+                        ],
+                    )
+                    i_tts_examples.load_input_event.then(
+                        fn=update_details_visibility,
+                        inputs=i_tts_type,  # 输入与 i_tts_type.change 事件一致
+                        outputs=[  # 输出也与 i_tts_type.change 事件一致
                             i_tts_prompt,
                             i_tts_emotion,
                             i_tts_dialect,
