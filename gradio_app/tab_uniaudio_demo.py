@@ -142,18 +142,18 @@ EXAMPLES_DATA = {
     #            idx0       idx1      idx2      idx3   idx4   idx5     idx6      idx7  idx8  idx9
     "instruct_tts": [
         # === 语速/语调/音量 ===
-        [
-            "语速/语调/音量",
-            "烟雨弥漫下，山环绕着水耸立着，水环绕着山流淌着。",
-            f"{EXAMPLES_DIR}/basic-speed.wav",
-            None,  # i_tts_emotion: 不使用，填 None
-            None,  # i_tts_dialect: 不使用，填 None
-            None,  # i_tts_ip:      不使用，填 None
-            None,  # i_tts_style:   不使用，填 None
-            "慢速",  # i_tts_speed
-            "中",  # i_tts_pitch
-            "中",  # i_tts_volume
-        ],
+        # [
+        #     "语速/语调/音量",
+        #     "烟雨弥漫下，山环绕着水耸立着，水环绕着山流淌着。",
+        #     f"{EXAMPLES_DIR}/basic-speed.wav",
+        #     None,  # i_tts_emotion: 不使用，填 None
+        #     None,  # i_tts_dialect: 不使用，填 None
+        #     None,  # i_tts_ip:      不使用，填 None
+        #     None,  # i_tts_style:   不使用，填 None
+        #     "慢速",  # i_tts_speed
+        #     "中",  # i_tts_pitch
+        #     "中",  # i_tts_volume
+        # ],
         [
             "语速/语调/音量",
             "烟雨弥漫下，山环绕着水耸立着，水环绕着山流淌着。",
@@ -166,18 +166,18 @@ EXAMPLES_DATA = {
             "中",
             "中",
         ],
-        [
-            "语速/语调/音量",
-            "目前共享出行市场处于高速增长阶段。",
-            f"{EXAMPLES_DIR}/basic-volume.wav",
-            None,
-            None,
-            None,
-            None,
-            "中速",
-            "中",
-            "低",
-        ],
+        # [
+        #     "语速/语调/音量",
+        #     "目前共享出行市场处于高速增长阶段。",
+        #     f"{EXAMPLES_DIR}/basic-volume.wav",
+        #     None,
+        #     None,
+        #     None,
+        #     None,
+        #     "中速",
+        #     "中",
+        #     "低",
+        # ],
         [
             "语速/语调/音量",
             "目前共享出行市场处于高速增长阶段。",
@@ -202,31 +202,31 @@ EXAMPLES_DATA = {
             "低",
             "中",
         ],
-        [
-            "语速/语调/音量",
-            "他们脱掉笨重的冬衣，走起路来腰杆挺直步履轻盈。",
-            f"{EXAMPLES_DIR}/basic-pitch.wav",
-            None,
-            None,
-            None,
-            None,
-            "中速",
-            "高",
-            "中",
-        ],
+        # [
+        #     "语速/语调/音量",
+        #     "他们脱掉笨重的冬衣，走起路来腰杆挺直步履轻盈。",
+        #     f"{EXAMPLES_DIR}/basic-pitch.wav",
+        #     None,
+        #     None,
+        #     None,
+        #     None,
+        #     "中速",
+        #     "高",
+        #     "中",
+        # ],
         # === 方言 ===
-        [
-            "方言",
-            "今个周末全场货品低至五折，数量有限，卖晒就冇喇。",
-            f"{EXAMPLES_DIR}/dialect-g-g.wav",
-            None,  # i_tts_emotion
-            "广粤话",  # i_tts_dialect
-            None,  # i_tts_ip
-            None,  # i_tts_style
-            None,
-            None,
-            None,  # speed/pitch/volume 不使用
-        ],
+        # [
+        #     "方言",
+        #     "今个周末全场货品低至五折，数量有限，卖晒就冇喇。",
+        #     f"{EXAMPLES_DIR}/dialect-g-g.wav",
+        #     None,  # i_tts_emotion
+        #     "广粤话",  # i_tts_dialect
+        #     None,  # i_tts_ip
+        #     None,  # i_tts_style
+        #     None,
+        #     None,
+        #     None,  # speed/pitch/volume 不使用
+        # ],
         [
             "方言",
             "你嚟探我，我真系好感动，好耐冇见你啦！",
@@ -239,18 +239,18 @@ EXAMPLES_DATA = {
             None,
             None,
         ],
-        [
-            "方言",
-            "你要自己打扮，不穿咋个晓得穿起漂不漂亮嘛？看我们这新款多时尚。",
-            f"{EXAMPLES_DIR}/dialect-s-s.wav",
-            None,
-            "四川话",
-            None,
-            None,
-            None,
-            None,
-            None,
-        ],
+        # [
+        #     "方言",
+        #     "你要自己打扮，不穿咋个晓得穿起漂不漂亮嘛？看我们这新款多时尚。",
+        #     f"{EXAMPLES_DIR}/dialect-s-s.wav",
+        #     None,
+        #     "四川话",
+        #     None,
+        #     None,
+        #     None,
+        #     None,
+        #     None,
+        # ],
         [
             "方言",
             "你那哈屋头还有电脑，那时候就已经先进了。",
@@ -264,18 +264,18 @@ EXAMPLES_DATA = {
             None,
         ],
         # === 情感 ===
-        [
-            "情感",
-            "If these examinations are held orally, they may be known colloquially as 'orals'.",
-            f"{EXAMPLES_DIR}/emo-n-h.wav",
-            "高兴",  # i_tts_emotion
-            None,  # i_tts_dialect
-            None,  # i_tts_ip
-            None,  # i_tts_style
-            None,
-            None,
-            None,
-        ],
+        # [
+        #     "情感",
+        #     "If these examinations are held orally, they may be known colloquially as 'orals'.",
+        #     f"{EXAMPLES_DIR}/emo-n-h.wav",
+        #     "高兴",  # i_tts_emotion
+        #     None,  # i_tts_dialect
+        #     None,  # i_tts_ip
+        #     None,  # i_tts_style
+        #     None,
+        #     None,
+        #     None,
+        # ],
         [
             "情感",
             "我竟然抢到了陈奕迅的演唱会门票！太棒了！终于可以现场听一听他的歌声了！",
@@ -289,18 +289,18 @@ EXAMPLES_DATA = {
             None,
         ],
         # === 音色设计（无参考音频 → None；风格文本在 idx6） ===
-        [
-            "音色设计",
-            "你睇你，成日挂住玩，书又唔读。",
-            None,  # ← i_tts_prompt: 音色设计不需要参考音频，必须用 None 而非 ""
-            None,  # i_tts_emotion
-            None,  # i_tts_dialect
-            None,  # ← i_tts_ip: 音色设计不需要IP，必须为 None
-            "这是一个粤语地区长辈的声音，是一种带有地域特色的创意风格。他使用粤语（广东话），年长男性声音沉厚，语速较慢。语气在说教时显得严肃，但言语间仍透露出对家人的关心。",  # ← i_tts_style: 风格文本放在这里
-            None,
-            None,
-            None,
-        ],
+        # [
+        #     "音色设计",
+        #     "你睇你，成日挂住玩，书又唔读。",
+        #     None,  # ← i_tts_prompt: 音色设计不需要参考音频，必须用 None 而非 ""
+        #     None,  # i_tts_emotion
+        #     None,  # i_tts_dialect
+        #     None,  # ← i_tts_ip: 音色设计不需要IP，必须为 None
+        #     "这是一个粤语地区长辈的声音，是一种带有地域特色的创意风格。他使用粤语（广东话），年长男性声音沉厚，语速较慢。语气在说教时显得严肃，但言语间仍透露出对家人的关心。",  # ← i_tts_style: 风格文本放在这里
+        #     None,
+        #     None,
+        #     None,
+        # ],
         [
             "音色设计",
             "我们家好容易恢复成这个样子，你明知有危险，为什么还一定要拉着杉杉？",
@@ -314,25 +314,25 @@ EXAMPLES_DATA = {
             None,
         ],
         # === 精品音色（无参考音频 → None；IP名在 idx5） ===
+        # [
+        #     "精品音色",
+        #     "总裁问，刚才皮皮鲁唱的歌是谁的词谁的曲，大手笔呀。",
+        #     None,  # i_tts_prompt: 精品音色不需要参考音频
+        #     None,  # i_tts_emotion
+        #     None,  # i_tts_dialect
+        #     "佩奇",  # ← i_tts_ip: IP角色名，必须是 IP_DICT 的 key
+        #     None,  # i_tts_style
+        #     None,
+        #     None,
+        #     None,
+        # ],
         [
             "精品音色",
-            "总裁问，刚才皮皮鲁唱的歌是谁的词谁的曲，大手笔呀。",
-            None,  # i_tts_prompt: 精品音色不需要参考音频
-            None,  # i_tts_emotion
-            None,  # i_tts_dialect
-            "佩奇",  # ← i_tts_ip: IP角色名，必须是 IP_DICT 的 key
-            None,  # i_tts_style
-            None,
-            None,
-            None,
-        ],
-        [
-            "精品音色",
-            "你好呀，我是佩奇，这是我的弟弟乔治。",
+            "我只是个小孩，你干吗那么认真。",
             None,  # i_tts_prompt
             None,  # i_tts_emotion
             None,  # i_tts_dialect
-            "佩奇",  # i_tts_ip
+            "蜡笔小新",  # i_tts_ip
             None,  # i_tts_style
             None,
             None,
@@ -561,7 +561,7 @@ class MingOmniTTSDemoTab:
                             pod_text = gr.Textbox(
                                 lines=5,
                                 label="对话脚本",
-                                info="使用 'speaker_1:', 'speaker_2:' 区分不同说话人。e.g. speaker_1:就比如说各种就是给别人提供，提供帮助的都可以说是服务的\n speaker_2:是的 不管是什么，就是说感觉都是，大家都，都可以说是服务业的一方面\n",
+                                info="使用 'speaker_1:', 'speaker_2:' 区分不同说话人。目前仅支持两位说话人，不同说话人的文本请分行输入",
                             )
                             gr.Markdown(REFERENCE_AUDIO_WARNING)
                             pod_prompt1 = gr.Audio(
