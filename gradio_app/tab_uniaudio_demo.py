@@ -34,15 +34,15 @@ DROPDOWN_CHOICES = {
     "bgm_moods": list(
         set(
             [
-                "鼓舞人心/充满希望",
+                "鼓舞人心 / 充满希望",
                 "壮丽宏大",
                 "快乐",
                 "平静放松",
                 "自信/坚定",
                 "轻快无忧无虑",
-                "活力四射/精力充沛",
+                "活力四射 / 精力充沛",
                 "悲伤哀愁",
-                "温暖/友善",
+                "温暖 / 友善",
                 "兴奋",
             ]
         )
@@ -75,59 +75,19 @@ DROPDOWN_CHOICES = {
 }
 
 IP_DICT = {
-    "爱新觉罗·弘历": "雍正王朝_爱新觉罗·弘历",
-    "爱新觉罗·弘时": "雍正王朝_爱新觉罗·弘时",
     "曹操": "三国演义_曹操",
-    "刁光斗": "大宋提刑官_刁光斗",
-    "丰兰息": "且试天下_丰兰息",
-    "公孙胜": "水浒传_公孙胜",
-    "关涛": "幸福到万家_关涛",
-    "关雪": "哈尔滨一九四四_关雪",
-    "郭启东": "风吹半夏_郭启东",
-    "何幸福": "幸福到万家_何幸福",
-    "灰太狼": "喜羊羊与灰太狼_灰太狼",
+    "郭德纲": "郭德纲_郭德纲",
     "康熙": "康熙王朝_康熙",
-    "李蔷": "法医秦明_李蔷",
-    "李涯": "潜伏_李涯",
-    "卢怀德": "大宋提刑官_卢怀德",
-    "陆建勋": "老九门_陆建勋",
-    "陆桥山": "潜伏_陆桥山",
-    "穆晚秋": "潜伏_穆晚秋",
-    "年羹尧": "雍正王朝_年羹尧",
     "潘金莲": "水浒传_潘金莲",
-    "潘越": "哈尔滨一九四四_潘越",
     "佩奇": "小猪佩奇_佩奇",
-    "齐铁嘴": "老九门_齐铁嘴",
-    "秦明": "法医秦明_秦明",
-    "青年康熙": "康熙王朝_青年康熙",
-    "裘德考": "老九门_裘德考",
-    "荣妃": "康熙王朝_荣妃",
     "四郎": "甄嬛传_四郎",
-    "司徒末": "致我们暖暖的小时光_司徒末",
-    "宋慈": "大宋提刑官_宋慈",
-    "苏麻喇姑": "康熙王朝_苏麻喇姑",
-    "苏培盛": "甄嬛传_苏培盛",
-    "孙颖莎": "孙颖莎_孙颖莎",
     "唐僧": "西游记_唐僧",
-    "铁铉": "山河月明_铁铉",
-    "王翠平": "潜伏_王翠平",
-    "吴三桂": "康熙王朝_吴三桂",
-    "邬思道": "雍正王朝_邬思道",
     "武松": "水浒传_武松",
-    "萧崇": "少年歌行_萧崇",
-    "孝庄": "康熙王朝_孝庄",
-    "许半夏": "风吹半夏_许半夏",
-    "徐文昌": "安家_徐文昌",
-    "野原美伢 (美伢)": "蜡笔小新_野原美伢 (美伢)",
-    "野原新之助 (小新)": "蜡笔小新_野原新之助 (小新)",
+    "于谦": "于谦_于谦",
     "雍正": "雍正王朝_雍正",
     "余则成": "潜伏_余则成",
-    "张启山": "老九门_张启山",
-    "朱标": "山河月明_朱标",
-    "朱棣": "山河月明_朱棣",
-    "朱颜": "玉骨遥_朱颜",
-    "朱元璋": "山河月明_朱元璋",
-    "左蓝": "潜伏_左蓝",
+    "野原美伢 (美伢)": "蜡笔小新_野原美伢 (美伢)",
+    "野原新之助 (小新)": "蜡笔小新_野原新之助 (小新)",
 }
 
 
@@ -179,6 +139,264 @@ IP_DICT = load_and_merge_ips(IP_DICT, "uniaudio_ip_list.txt")
 
 REFERENCE_AUDIO_WARNING = "**⚠️ 注意：参考音频建议长度约为 3-7 秒，过长的音频可能导致输出异常。您可以使用下方的音频控件对音频进行剪辑。**"
 
+# --- 示例数据 ---
+EXAMPLES_DIR = "./audio"
+
+EXAMPLES_DATA = {
+    # 指令TTS: [指令类型, 合成文本, 参考音频, 情感, 方言, IP角色, 风格描述, 语速, 基频, 音量]
+    #            idx0       idx1      idx2      idx3   idx4   idx5     idx6      idx7  idx8  idx9
+    "instruct_tts": [
+        # === 语速/语调/音量 ===
+        [
+            "语速/语调/音量",
+            "烟雨弥漫下，山环绕着水耸立着，水环绕着山流淌着。",
+            f"{EXAMPLES_DIR}/basic-speed.wav",
+            None,  # i_tts_emotion: 不使用，填 None
+            None,  # i_tts_dialect: 不使用，填 None
+            None,  # i_tts_ip:      不使用，填 None
+            None,  # i_tts_style:   不使用，填 None
+            "慢速",  # i_tts_speed
+            "中",  # i_tts_pitch
+            "中",  # i_tts_volume
+        ],
+        [
+            "语速/语调/音量",
+            "烟雨弥漫下，山环绕着水耸立着，水环绕着山流淌着。",
+            f"{EXAMPLES_DIR}/basic-speed.wav",
+            None,
+            None,
+            None,
+            None,
+            "快速",
+            "中",
+            "中",
+        ],
+        [
+            "语速/语调/音量",
+            "目前共享出行市场处于高速增长阶段。",
+            f"{EXAMPLES_DIR}/basic-volume.wav",
+            None,
+            None,
+            None,
+            None,
+            "中速",
+            "中",
+            "低",
+        ],
+        [
+            "语速/语调/音量",
+            "目前共享出行市场处于高速增长阶段。",
+            f"{EXAMPLES_DIR}/basic-volume.wav",
+            None,
+            None,
+            None,
+            None,
+            "中速",
+            "中",
+            "高",
+        ],
+        [
+            "语速/语调/音量",
+            "他们脱掉笨重的冬衣，走起路来腰杆挺直步履轻盈。",
+            f"{EXAMPLES_DIR}/basic-pitch.wav",
+            None,
+            None,
+            None,
+            None,
+            "中速",
+            "低",
+            "中",
+        ],
+        [
+            "语速/语调/音量",
+            "他们脱掉笨重的冬衣，走起路来腰杆挺直步履轻盈。",
+            f"{EXAMPLES_DIR}/basic-pitch.wav",
+            None,
+            None,
+            None,
+            None,
+            "中速",
+            "高",
+            "中",
+        ],
+        # === 方言 ===
+        [
+            "方言",
+            "今个周末全场货品低至五折，数量有限，卖晒就冇喇。",
+            f"{EXAMPLES_DIR}/dialect-g-g.wav",
+            None,  # i_tts_emotion
+            "广粤话",  # i_tts_dialect
+            None,  # i_tts_ip
+            None,  # i_tts_style
+            None,
+            None,
+            None,  # speed/pitch/volume 不使用
+        ],
+        [
+            "方言",
+            "你嚟探我，我真系好感动，好耐冇见你啦！",
+            f"{EXAMPLES_DIR}/dialect-m-g.wav",
+            None,
+            "广粤话",
+            None,
+            None,
+            None,
+            None,
+            None,
+        ],
+        [
+            "方言",
+            "你要自己打扮，不穿咋个晓得穿起漂不漂亮嘛？看我们这新款多时尚。",
+            f"{EXAMPLES_DIR}/dialect-s-s.wav",
+            None,
+            "四川话",
+            None,
+            None,
+            None,
+            None,
+            None,
+        ],
+        [
+            "方言",
+            "你那哈屋头还有电脑，那时候就已经先进了。",
+            f"{EXAMPLES_DIR}/dialect-m-s.wav",
+            None,
+            "四川话",
+            None,
+            None,
+            None,
+            None,
+            None,
+        ],
+        # === 情感 ===
+        [
+            "情感",
+            "If these examinations are held orally, they may be known colloquially as 'orals'.",
+            f"{EXAMPLES_DIR}/emo-n-h.wav",
+            "高兴",  # i_tts_emotion
+            None,  # i_tts_dialect
+            None,  # i_tts_ip
+            None,  # i_tts_style
+            None,
+            None,
+            None,
+        ],
+        [
+            "情感",
+            "我竟然抢到了陈奕迅的演唱会门票！太棒了！终于可以现场听一听他的歌声了！",
+            f"{EXAMPLES_DIR}/emo-zh-n-h.wav",
+            "高兴",
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        ],
+        # === 音色设计（无参考音频 → None；风格文本在 idx6） ===
+        [
+            "音色设计",
+            "你睇你，成日挂住玩，书又唔读。",
+            None,  # ← i_tts_prompt: 音色设计不需要参考音频，必须用 None 而非 ""
+            None,  # i_tts_emotion
+            None,  # i_tts_dialect
+            None,  # ← i_tts_ip: 音色设计不需要IP，必须为 None
+            "这是一个粤语地区长辈的声音，是一种带有地域特色的创意风格。他使用粤语（广东话），年长男性声音沉厚，语速较慢。语气在说教时显得严肃，但言语间仍透露出对家人的关心。",  # ← i_tts_style: 风格文本放在这里
+            None,
+            None,
+            None,
+        ],
+        [
+            "音色设计",
+            "我们家好容易恢复成这个样子，你明知有危险，为什么还一定要拉着杉杉？",
+            None,  # i_tts_prompt
+            None,  # i_tts_emotion
+            None,  # i_tts_dialect
+            None,  # i_tts_ip
+            "性别: 女性. 音高: 女性高音，句末随情绪上扬. 语速: 语速偏缓，充满恳切感. 音量: 音量正常，激动处略有提高. 年龄: 中年女性. 清晰度: 吐字清晰，略带哭腔. 流畅度: 整体流畅，因情绪略显迟缓. 口音: 标准普通话. 音色质感: 音色略显沙哑，蕴含悲伤. 情绪: 悲伤焦虑，带有不解与恳求. 语调: 起伏较大，表达焦急质问. 性格: 情感浓烈，忧心忡忡.",  # ← i_tts_style
+            None,
+            None,
+            None,
+        ],
+        # === 精品音色（无参考音频 → None；IP名在 idx5） ===
+        # === 精品音色（无参考音频 → None；IP名在 idx5） ===
+        [
+            "精品音色",
+            "总裁问，刚才皮皮鲁唱的歌是谁的词谁的曲，大手笔呀。",
+            None,  # i_tts_prompt: 精品音色不需要参考音频
+            None,  # i_tts_emotion
+            None,  # i_tts_dialect
+            "佩奇",  # ← i_tts_ip: IP角色名，必须是 IP_DICT 的 key
+            None,  # i_tts_style
+            None,
+            None,
+            None,
+        ],
+        [
+            "精品音色",
+            "你好呀，我是佩奇，这是我的弟弟乔治。",
+            None,  # i_tts_prompt
+            None,  # i_tts_emotion
+            None,  # i_tts_dialect
+            "佩奇",  # i_tts_ip
+            None,  # i_tts_style
+            None,
+            None,
+            None,
+        ],
+    ],
+    # 零样本TTS: [目标文本, 参考音频]
+    "zero_shot_tts": [
+        [
+            "Ming-omni-tts 是一款高性能的统一音频生成模型，可以实现对语音属性的精确控制，并能在单一通道中合成语音、环境音和音乐",
+            f"{EXAMPLES_DIR}/basic-pitch.wav",
+        ],
+        [
+            "Ming-omni-tts is a high-performance unified audio generation model that achieves precise control over speech attributes and enables single-channel synthesis of speech, environmental sounds, and music.",
+            f"{EXAMPLES_DIR}/basic-volume.wav",
+        ],
+    ],
+    # 播客: [对话脚本, 说话人1音频, 说话人2音频]
+    "podcast": [
+        [
+            "speaker_1: 知道家长在考虑什么让家长也知道孩子们在考虑什么。\\n speaker_2: 对。\\n speaker_1: 减少矛盾。\\n speaker_2: 对，就是感觉其实出这些电影或者电视剧，也是挺好的让彼此更加了解一下，我感觉如果是一个家长和一个小孩儿，去看电视剧的话，收获也是蛮多的。\\n speaker_1: 那你还有什么比较好的电影介绍给我呢。",
+            f"{EXAMPLES_DIR}/pod31.wav",
+            f"{EXAMPLES_DIR}/pod32.wav",
+        ],
+    ],
+    # 带BGM语音: [语音文本, 参考音频, 风格, 情绪, 乐器, 主题, SNR]
+    "speech_with_bgm": [
+        [
+            "全神贯注，跟上这强劲的节奏，冲向终点吧！",
+            f"{EXAMPLES_DIR}/pod31.wav",
+            "电子舞曲",
+            "活力四射",
+            "合成铜管乐器",
+            "运动",
+            5.0,
+        ],
+        [
+            "阳光洒满公路，带上行囊，出发去远方！",
+            f"{EXAMPLES_DIR}/pod32.wav",
+            "流行摇滚",
+            "快乐",
+            "电吉他",
+            "旅行",
+            5.0,
+        ],
+    ],
+    # BGM: [风格, 情绪, 乐器, 主题, 时长]
+    "bgm": [
+        ["迪斯科", "活力四射 / 精力充沛", "电吉他", "运动", 45],
+        ["当代古典音乐：钢琴驱动", "温暖 / 友善", "合成拨弦", "节日", 60],
+    ],
+    # 音效: [音效描述]
+    "tta": [
+        ["Thunder and a gentle rain"],
+        ["Continuous snoring of a person"],
+    ],
+}
+
 
 class MingOmniTTSDemoTab:
     """
@@ -203,15 +421,9 @@ class MingOmniTTSDemoTab:
                     with gr.Row():
                         with gr.Column(scale=2):
                             i_tts_type = gr.Dropdown(
-                                [
-                                    ("方言 (dialect)", "dialect"),
-                                    ("情感 (emotion)", "emotion"),
-                                    ("IP (IP)", "IP"),
-                                    ("风格 (style)", "style"),
-                                    ("基础 (basic)", "basic")
-                                ],
+                                ["语速/语调/音量", "方言", "情感", "音色设计", "精品音色"],
                                 label="指令类型",
-                                value="emotion",
+                                value="语速/语调/音量",
                             )
                             i_tts_text = gr.Textbox(label="合成文本", info="输入要合成的语音文本。")
                             gr.Markdown(REFERENCE_AUDIO_WARNING)
@@ -254,6 +466,25 @@ class MingOmniTTSDemoTab:
 
                             i_tts_btn = gr.Button("生成指令语音", variant="primary")
 
+                            # 指令TTS示例 - 暂时禁用（待音频文件准备完成后启用）
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["instruct_tts"],
+                                inputs=[
+                                    i_tts_type,
+                                    i_tts_text,
+                                    i_tts_prompt,
+                                    i_tts_emotion,
+                                    i_tts_dialect,
+                                    i_tts_ip,
+                                    i_tts_style,
+                                    i_tts_speed,
+                                    i_tts_pitch,
+                                    i_tts_volume,
+                                ],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
+
                         with gr.Column(scale=1):
                             i_tts_status = gr.Markdown(value="💡 请选择指令类型并填写参数。")
                             i_tts_output = gr.Audio(
@@ -261,16 +492,16 @@ class MingOmniTTSDemoTab:
                             )
 
                     def update_details_visibility(instruct_type):
-                        prompt_visible = instruct_type not in ["IP", "style"]
+                        prompt_visible = instruct_type not in ["音色设计", "精品音色"]
                         return {
                             i_tts_prompt: gr.update(visible=prompt_visible),
-                            i_tts_emotion: gr.update(visible=instruct_type == "emotion"),
-                            i_tts_dialect: gr.update(visible=instruct_type == "dialect"),
-                            i_tts_ip: gr.update(visible=instruct_type == "IP"),
-                            i_tts_style: gr.update(visible=instruct_type == "style"),
-                            i_tts_speed: gr.update(visible=instruct_type == "basic"),
-                            i_tts_pitch: gr.update(visible=instruct_type == "basic"),
-                            i_tts_volume: gr.update(visible=instruct_type == "basic"),
+                            i_tts_emotion: gr.update(visible=instruct_type == "情感"),
+                            i_tts_dialect: gr.update(visible=instruct_type == "方言"),
+                            i_tts_ip: gr.update(visible=instruct_type == "精品音色"),
+                            i_tts_style: gr.update(visible=instruct_type == "音色设计"),
+                            i_tts_speed: gr.update(visible=instruct_type == "语速/语调/音量"),
+                            i_tts_pitch: gr.update(visible=instruct_type == "语速/语调/音量"),
+                            i_tts_volume: gr.update(visible=instruct_type == "语速/语调/音量"),
                         }
 
                     i_tts_type.change(
@@ -302,6 +533,14 @@ class MingOmniTTSDemoTab:
                                 sources=["upload", "microphone"],
                             )
                             zs_tts_btn = gr.Button("克隆并生成语音", variant="primary")
+
+                            # 零样本TTS示例 - 暂时禁用（待音频文件准备完成后启用）
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["zero_shot_tts"],
+                                inputs=[zs_tts_text, zs_tts_prompt],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
                         with gr.Column(scale=1):
                             zs_tts_status = gr.Markdown(value="💡 请输入文本并上传参考音频。")
                             zs_tts_output = gr.Audio(
@@ -330,6 +569,14 @@ class MingOmniTTSDemoTab:
                                 sources=["upload", "microphone"],
                             )
                             pod_btn = gr.Button("生成播客", variant="primary")
+
+                            # 播客示例
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["podcast"],
+                                inputs=[pod_text, pod_prompt1, pod_prompt2],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
                         with gr.Column(scale=1):
                             pod_status = gr.Markdown(
                                 value="💡 请填写脚本并上传两位说话人的参考音频。"
@@ -382,6 +629,22 @@ class MingOmniTTSDemoTab:
                                     info="值越小，背景音乐音量越大。",
                                 )
                             swb_btn = gr.Button("生成带BGM的语音", variant="primary")
+
+                            # 带BGM语音示例
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["speech_with_bgm"],
+                                inputs=[
+                                    swb_text,
+                                    swb_prompt,
+                                    swb_genre,
+                                    swb_mood,
+                                    swb_instrument,
+                                    swb_theme,
+                                    swb_snr,
+                                ],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
                         with gr.Column(scale=1):
                             swb_status = gr.Markdown(value="💡 请填写所有字段并上传参考音频。")
                             swb_output = gr.Audio(
@@ -414,6 +677,20 @@ class MingOmniTTSDemoTab:
                             )
                             bgm_duration = gr.Slider(30, 60, value=35, step=1, label="时长 (秒)")
                             bgm_btn = gr.Button("生成背景音乐", variant="primary")
+
+                            # BGM示例
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["bgm"],
+                                inputs=[
+                                    bgm_genre,
+                                    bgm_mood,
+                                    bgm_instrument,
+                                    bgm_theme,
+                                    bgm_duration,
+                                ],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
                         with gr.Column(scale=1):
                             bgm_status = gr.Markdown(value="💡 请描述您想要的音乐。")
                             bgm_output = gr.Audio(
@@ -429,6 +706,14 @@ class MingOmniTTSDemoTab:
                                 info="建议使用英文描述，效果更佳。例如: 'Rain is falling continuously'。",
                             )
                             tta_btn = gr.Button("生成音效", variant="primary")
+
+                            # 音效示例
+                            gr.Examples(
+                                examples=EXAMPLES_DATA["tta"],
+                                inputs=[tta_text],
+                                label="示例 (点击填充)",
+                                cache_examples=False,
+                            )
                         with gr.Column(scale=1):
                             tta_status = gr.Markdown(value="💡 请输入音效的文本描述。")
                             tta_output = gr.Audio(
@@ -448,21 +733,33 @@ class MingOmniTTSDemoTab:
                 pitch,
                 volume,
             ):
+                # UI显示值到后端API值的映射
+                instruct_type_mapping = {
+                    "语速/语调/音量": "basic",
+                    "方言": "dialect",
+                    "情感": "emotion",
+                    "音色设计": "style",
+                    "精品音色": "IP",
+                }
+                api_instruct_type = instruct_type_mapping.get(instruct_type, instruct_type)
+
                 details = {}
-                if instruct_type == "emotion":
+                if api_instruct_type == "emotion":
                     details = {"情感": emotion}
-                elif instruct_type == "dialect":
+                elif api_instruct_type == "dialect":
                     details = {"方言": dialect}
-                elif instruct_type == "IP":
+                elif api_instruct_type == "IP":
                     backend_ip = IP_DICT.get(ip_choice)
                     if not backend_ip:
                         raise gr.Error(f"未找到IP角色'{ip_choice}'的配置。")
                     details = {"IP": backend_ip}
-                elif instruct_type == "style":
+                elif api_instruct_type == "style":
                     details = {"风格": style}
-                elif instruct_type == "basic":
+                elif api_instruct_type == "basic":
                     details = {"语速": speed, "基频": pitch, "音量": volume}
-                yield from self._submit_and_poll("TTS", instruct_type, text, prompt_audio, details)
+                yield from self._submit_and_poll(
+                    "TTS", api_instruct_type, text, prompt_audio, details
+                )
 
             i_tts_btn.click(
                 fn=i_tts_submit,
@@ -628,7 +925,7 @@ class MingOmniTTSDemoTab:
                     "Instrument": f"{instrument}.",
                     "Theme": f"{theme}.",
                     "SNR": str(float(snr)),
-                    "ENV": None,
+                    "ENV": "",
                 }
                 payload = {
                     "task_type": "speech_with_bgm",
